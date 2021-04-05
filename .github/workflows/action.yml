@@ -8,11 +8,13 @@ jobs:
           echo $'{"experimental": true}' | sudo dd status=none of=/etc/docker/daemon.json 
           sudo service docker restart
           docker version -f '{{.Server.Experimental}}' 
-      - name: In with
+      - id: In with
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: lgohr/test-push
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           platforms: linux/amd64,linux/arm64
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
       
