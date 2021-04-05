@@ -8,7 +8,7 @@ jobs:
           echo $'{"experimental": true}' | sudo dd status=none of=/etc/docker/daemon.json 
           sudo service docker restart
           docker version -f '{{.Server.Experimental}}' 
-      - id: In with
+      - id: in-with
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: lgohr/test-push
