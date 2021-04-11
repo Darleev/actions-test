@@ -1,20 +1,12 @@
 on: [push]
 jobs:
   build:
-    runs-on: [ubuntu-16.04]
+    runs-on: [ubuntu-latest]
     steps:
       - name: Plain job
         run: |
-          echo $'{"experimental": true}' | sudo dd status=none of=/etc/docker/daemon.json 
-          sudo service docker restart
-          docker version -f '{{.Server.Experimental}}' 
-      - id: in-with
-        uses: elgohr/Publish-Docker-Github-Action@master
-        with:
-          name: lgohr/test-push
-          username: test
-          password: test
-          platforms: linux/amd64,linux/arm64
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+          sudo apt update
+          sudo apt install snapd
+          sudo snap install drawio
         shell: bash
       
