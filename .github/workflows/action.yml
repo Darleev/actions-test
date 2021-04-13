@@ -5,8 +5,9 @@ jobs:
     steps:
       - name: Plain job
         run: |
-          sudo apt update
-          sudo apt install snapd
-          sudo snap install drawio
+          wget -O /tmp/sbt.tgz "https://github.com/sbt/sbt/releases/download/v1.4.9/sbt-1.4.9.tgz"
+          sudo tar zxf /tmp/sbt.tgz -C /usr/share
+          sudo rm -rf /usr/bin/sbt
+          sudo ln -s /usr/share/sbt/bin/sbt /usr/bin/sbt
         shell: bash
       
