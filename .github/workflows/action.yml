@@ -5,5 +5,5 @@ jobs:
     steps:
       - name: Plain job
         run: Invoke-WebRequest http://litesync.io/download/litesync-free-windows-x86_64.tar.gz -OutFile litesync-free-windows-x86_64.tar.gz
-        shell: bash
+        shell: powershell 
       
