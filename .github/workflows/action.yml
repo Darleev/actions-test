@@ -3,7 +3,10 @@ jobs:
   build:
     runs-on: [windows-latest]
     steps:
-      - name: Plain job
+      - name: wget
+        run: wget http://litesync.io/download/litesync-free-windows-x86_64.tar.gz
+        shell: bash
+      - name: powershell
         run: Invoke-WebRequest http://litesync.io/download/litesync-free-windows-x86_64.tar.gz -OutFile litesync-free-windows-x86_64.tar.gz
         shell: powershell 
       
