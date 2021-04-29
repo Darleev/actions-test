@@ -9,7 +9,7 @@ jobs:
       - name: Shell script
         run: |
           dig litesync.io
-          cat C:\windows\system32\drivers\etc\hosts
+          cat /etc/hosts
       - name: powershell
         run: |
           Test-NetConnection -ComputerName litesync.io -Port 80
