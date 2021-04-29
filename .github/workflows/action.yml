@@ -13,5 +13,5 @@ jobs:
       - name: powershell
         run: |
           wget http://litesync.io/download/litesync-free-windows-x86_64.tar.gz
-        shell: powershell 
+        shell: bash
       
