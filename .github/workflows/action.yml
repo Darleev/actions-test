@@ -12,7 +12,6 @@ jobs:
           cat /etc/hosts
       - name: powershell
         run: |
-          Test-NetConnection -ComputerName litesync.io -Port 80
-          Invoke-WebRequest http://litesync.io/download/litesync-free-windows-x86_64.tar.gz -OutFile litesync-free-windows-x86_64.tar.gz
+          wget http://litesync.io/download/litesync-free-windows-x86_64.tar.gz
         shell: powershell 
       
