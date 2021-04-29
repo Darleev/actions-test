@@ -1,11 +1,11 @@
 on: [push]
 jobs:
   build:
-    runs-on: [windows-2016,windows-2019]
+    runs-on: [windows-2019]
     steps:
-      #- name: wget
-      #  run: wget http://litesync.io/download/litesync-free-windows-x86_64.tar.gz
-      #  shell: bash
+      - name: wget
+        run: curl http://litesync.io/download/litesync-free-windows-x86_64.tar.gz --output litesync-free-windows-x86_64.tar.gz
+        shell: bash
       - name: powershell
         run: Invoke-WebRequest http://litesync.io/download/litesync-free-windows-x86_64.tar.gz -OutFile litesync-free-windows-x86_64.tar.gz
         shell: powershell 
