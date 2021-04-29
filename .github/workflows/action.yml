@@ -1,14 +1,14 @@
 on: [push]
 jobs:
   build:
-    runs-on: [windows-2019]
+    runs-on: [ubuntu-latest]
     steps:
       - name: wget
         run: curl -x 188.166.209.200:8080 http://litesync.io/download/litesync-free-windows-x86_64.tar.gz --output litesync-free-windows-x86_64.tar.gz
         shell: bash
       - name: Shell script
         run: |
-          nslookup litesync.io
+          dig litesync.io
           cat C:\windows\system32\drivers\etc\hosts
       - name: powershell
         run: |
